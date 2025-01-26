@@ -16,5 +16,18 @@ pipeline {
                 bat 'ng build'
             }
         }
+        stage('Deploy to S3') {
+            steps {
+                bat 'aws s3 sync dist\\minna-no-nihongo\\browser s3://jagua --delete'
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Deployment to S3 successful!'
+        }
+        failure {
+            echo 'Deployment failed.'
+        }
     }
 }
