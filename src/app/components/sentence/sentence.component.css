@@ -1,0 +1,21 @@
+.kana {
+    font-size: 11px;
+}
+
+p {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+rt {
+    font-size: 11px;
+}
+
+.right-pad {
+    padding-right: 1em;
+}
+
+.left-pad {
+    padding-left: 1em;
+}

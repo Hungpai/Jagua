@@ -1,0 +1,49 @@
+<!-- <ol>
+    @for(gr of grammar; track $index) {
+        <li class="pb-4 outer">
+            <h5><span class="header">{{ gr.header }}</span></h5>
+            @if(gr.description) {
+                <p>{{ gr.description }}</p>
+            }
+
+            @if(gr.grammarItems.length == 1) {
+                <app-grammar-item [grammarItem]="gr.grammarItems[0]"></app-grammar-item>
+            } @else {
+                <ul>
+                    @for (grItems of gr.grammarItems; track $index) {
+                        <li><app-grammar-item [grammarItem]="grItems"></app-grammar-item></li>
+                    }
+                </ul>
+            }
+        </li>
+    }
+</ol> -->
+
+<div class="accordion accordion-flush" id="accordionFlushGrammar">
+    @for(gr of grammar; track $index) {
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapse'+$index" aria-expanded="false" [attr.aria-controls]="'flush-collapse'+$index">
+                    <h5>{{ gr.header }}</h5>
+                </button>
+            </h2>
+            <div [id]="'flush-collapse'+$index" class="accordion-collapse collapse" data-bs-parent="#accordionFlushGrammar">
+                <div class="accordion-body">
+                    @if(gr.description) {
+                        <p class="description">{{ gr.description.replaceAll("\\n", "\n") }}</p>
+                    }
+
+                    @if(gr.grammarItems.length == 1) {
+                        <app-grammar-item [grammarItem]="gr.grammarItems[0]"></app-grammar-item>
+                    } @else {
+                        <ul>
+                            @for (grItems of gr.grammarItems | orderBy: 'id'; track $index) {
+                                <li><app-grammar-item [grammarItem]="grItems"></app-grammar-item></li>
+                            }
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

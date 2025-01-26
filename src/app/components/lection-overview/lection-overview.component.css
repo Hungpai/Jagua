@@ -1,0 +1,53 @@
+.navbar {
+    background-color: rgb(255, 255, 255);
+}
+
+.overview {
+    margin-top: 7em;
+}
+
+.overview-item {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .overview-item {
+        width: 70%;
+    }
+}
+
+/* .description {
+    background-color: var(--tertiary-color);
+} */
+
+/* .list-group {
+    --bs-list-group-border-color: white;
+    --bs-list-group-bg: var(--tertiary-color);
+    --bs-list-group-disabled-bg: var(--tertiary-color);
+} */
+
+.background {
+    top: 0;
+    left: 0;
+    z-index: -100;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: var(--tertiary-color);
+    /* border: 10px solid black; */
+}
+
+.badge {
+    --bs-badge-color: white;
+    background-color: #d63384c3;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}

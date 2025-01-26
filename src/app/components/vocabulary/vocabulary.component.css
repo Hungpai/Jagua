@@ -1,0 +1,154 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    /* height: 100vh; */
+    width: 70vw;
+    max-width: 814px;
+    height: 520px;
+    /* border: dashed orange; */
+    /* border-style: dashed; */
+    margin-top: 1em;
+}
+
+.card-container {
+    perspective: 62.5rem;
+    margin-bottom: 20px;
+    
+    width: 100%;
+    height: 100%;
+    /* border: dashed blue; */
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    background-color: none;
+}
+
+.flip-card.is-flipped {
+    transform: rotateX(180deg);
+}
+
+.flip-card.next-card {
+    animation: new-card 0.25s ease;
+}
+
+@keyframes new-card {
+    0% { transform:  translateX(var(--distance)) rotateY(var(--rotation)); }
+    100% { transform: translateX(0), rotateY(0deg); }
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 6px #dc35463e;
+    color: black;
+    font-size: 1.75rem;
+    user-select: none;
+}
+
+.card-front {
+    background-color: white;
+}
+
+.wrapper-jp {
+    display: flex;
+    align-items: end;
+}
+
+.wrapper-jp > p, ruby{
+    margin: 0;
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateX(180deg);
+}
+
+ /* Responsive Breakpoints */
+ @media (max-width: 1024px) {
+    .wrapper {
+        height: 350px; /* Medium screens */
+    }
+
+    .card-front, .card-back {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: 300px; /* Small screens */
+    }
+
+    .card-front, .card-back {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper {
+        height: 250px; /* Extra small screens */
+    }
+
+    .card-front, .card-back {
+        font-size: 1.0rem;
+    }
+} 
+
+
+.flip-button {
+    padding: 5px 30px;
+    color: #fff;
+    background-color: white;
+    border-radius: 25px;
+    /* border: solid var(--ternary-color) 1px; */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.flip-button:hover {
+    background-color: #dc3545;
+}
+
+.flip-button:focus {
+    outline: none;
+  }
+
+.wrapper-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2em;
+    border: none;
+}
+
+
+.progress-counter {
+    font-size: 1.3em;
+    color: black;
+}
+
+i {
+    color: black;
+}
+
+.progress {
+    --bs-progress-bg: white;
+}
+
+

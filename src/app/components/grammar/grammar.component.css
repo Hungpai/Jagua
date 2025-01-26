@@ -1,0 +1,26 @@
+/* .header {
+    border: 1px solid black;
+    font-weight: bold;
+} */
+
+.outer::marker {
+    font-size: 1.2em;
+}
+
+.accordion {
+    --bs-accordion-active-bg: 	#F0F0F0;
+    --bs-accordion-border-color: var(--tertiary-color);
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-active-color: black;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .accordion{
+        width: 70%;
+    }
+}
+
+.description {
+    white-space: pre-wrap;
+}

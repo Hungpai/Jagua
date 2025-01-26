@@ -1,0 +1,33 @@
+.navbar, #grammar, #kanji {
+    /* background-color: var(--tertiary-color); */
+    /* background-color: #031633; */
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+}
+
+.title {
+    color: var(--primary-text-color);
+}
+
+.showcase {
+    background-color: var(--tertiary-color);
+    padding-top: 5em;
+    padding-bottom: 1em;
+}
+
+.kana {
+    background-color: var(--tertiary-color);
+}
+
+.kanji-img {
+    border-radius: 50%;
+}
+
+
+.footer {
+    background-color: var(--tertiary-color);
+}
+/* .start-button {
+    background-color: var(--background-color);
+    border: none;
+} */

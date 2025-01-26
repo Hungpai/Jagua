@@ -1,0 +1,35 @@
+.navbar {
+    background-color: white;
+}
+
+.lection-header {
+    padding-top: 5em;
+    padding-bottom: 1em;
+}
+
+.vokabeln {
+    background-color: var(--tertiary-color);
+}
+
+.footer {
+    background-color: white;
+}
+
+.grammatik {
+    background-color: var(--tertiary-color);
+}
+
+.accordion {
+    --bs-accordion-active-bg: var(--tertiary-color);
+    --bs-accordion-border-color: var(--tertiary-color);
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-active-color: black;
+    width: 100%;
+}
+
+
+@media (min-width: 992px) {
+    .accordion{
+        width: 70%;
+    }
+}

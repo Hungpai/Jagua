@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="card-container">
+        <div class="flip-card" id="flipping-card" (click)="flipCard()">
+            @if(vocabulary.length > 0) {
+                <div class="card-front" id="card-front">
+                    <app-sentence [word_jp]="curr_vocab.word_jp" [kanji]="curr_vocab.kanji"></app-sentence>
+                </div>
+                <div class="card-back" id="card-back">
+                    {{ curr_vocab.word_de }}
+                </div>
+            }
+        </div>
+    </div>
+    <div class="wrapper-buttons">
+        <button class="flip-button" (click)="moveCard('16deg', '-16%', -1)"><i class="bi bi-arrow-left h2"></i></button>
+        <p class="progress-counter">{{index+1}}/{{vocabulary.length}}</p>
+        <button class="flip-button" (click)="moveCard('-16deg', '16%',  1)"><i class="bi bi-arrow-right h2"></i></button>
+    </div>
+</div>
+<div class="progress mt-2 mb-2" role="progressbar" aria-label="Basic example"  aria-valuenow="1" aria-valuemin="1" aria-valuemax="8"  style="height: 10px">
+    <div class="progress-bar bg-danger" [style]="progress"></div>
+</div>
+

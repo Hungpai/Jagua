@@ -1,0 +1,14 @@
+.examples {
+    width: 100%;
+}
+
+.kana {
+    font-size: 11px;
+    bottom: 0px;
+}
+
+@media (min-width: 992px) {
+    .examples{
+        width: 60%;
+    }
+}

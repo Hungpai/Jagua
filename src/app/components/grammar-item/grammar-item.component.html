@@ -1,0 +1,24 @@
+<p class="m-0 p-0">{{grammarItem.title}}</p>
+<p class="m-0 p-0 description">{{grammarItem.description.replaceAll("\\n", "\n")}}</p>
+
+@switch (dtype(grammarItem.examples)) {
+    @case ("pattern") {
+        <app-pattern [patterns]="castVocabulary(grammarItem.examples)"></app-pattern>
+    }
+
+    @case ("example") {
+        <app-example [examples]="castExample(grammarItem.examples)"></app-example>
+    }
+
+    @case ("dialogue") {
+        <app-dialogue [dialogue]="castDialogue(grammarItem.examples)"></app-dialogue>
+    }
+
+    @case ("empty") {
+        <!-- <div></div> -->
+    }
+}
+
+@if (grammarItem.note) {
+    <p class="m-0 p-1">[Anm.] {{grammarItem.note}}</p>
+}

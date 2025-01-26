@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    /* --background-color: #F5EFFF;
+    --primary-color: #A294F9;
+    --secondary-color: #CDC1FF;
+    --ternary-color: #E5D9F2; */
+
+    --background-color: #441752;
+    --primary-color: white;
+    --secondary-color: #8174A0;
+    --tertiary-color: #f5cbd7;
+    --primary-text-color: black;
+
+}
+
+body {
+    display: block;
+    font-family: Trebuchet MS, sans-serif;
+}
