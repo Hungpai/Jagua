@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                bat 'npm test --no-watch --browsers ChromeHeadless'
+                bat 'ng test --no-watch --browsers ChromeHeadless'
             }
         }
         stage('Build Angular app') {
