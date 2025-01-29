@@ -11,6 +11,11 @@ pipeline {
                 bat 'npm install'
             }
         }
+        stage('Run Tests') {
+            steps {
+                sh 'npm test --watch=false --browsers=false'
+            }
+        }
         stage('Build Angular app') {
             steps {
                 bat 'ng build'
