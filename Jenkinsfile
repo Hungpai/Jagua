@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'npm test --watch=false --browsers=false'
+                bat 'npm test --watch=false --browsers=false'
             }
         }
         stage('Build Angular app') {
