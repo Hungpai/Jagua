@@ -42,4 +42,3 @@ testem.log
 Thumbs.db
 src/app/testcomponoent-template
 src/app/testservice-template
-karma.conf.js
