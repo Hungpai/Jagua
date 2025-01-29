@@ -18,17 +18,6 @@ export class GrammarItemComponent {
   @Input() grammarItem: GrammarItem = {} as GrammarItem;
 
   dtype(example:Array<Vocabulary|Example|Dialogue>) {
-    // if('title' in exhaustMap) return 'dialogue';
-
-    // example = example as Array<Vocabulary|Example>
-    // if(example.length == 0) return "empty";
-    
-    // if('word_jp' in example[0]) {
-    //   return 'pattern';
-    // } else {
-    //   return 'example';
-    // }
-
     if (example.length == 0) return "empty";
 
     const item = example[0];

@@ -1,11 +1,6 @@
 td {
-    padding: 0 2em 0.5em 0;
-    /* border: 1px solid black; */
-    margin: 0;
-    vertical-align: top;
-    white-space: pre-wrap; 
+  padding: 0 2em 0.5em 0;
+  margin: 0;
+  vertical-align: top;
+  white-space: pre-wrap; 
 }
-
-/* .newline {
-    white-space: pre-wrap; 
-} */

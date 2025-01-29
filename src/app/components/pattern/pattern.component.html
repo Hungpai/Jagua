@@ -1,16 +1,10 @@
 <ol class="pt-2">
-    @for (pattern of patterns; track $index) {
+  @for (pattern of patterns; track $index) {
     <li class="pb-2">
-        <app-pattern-item [content]="pattern"></app-pattern-item>
+        <div class="d-flex justify-content-between align-items-end">
+          <p class="m-0">{{pattern.word_de}}</p>
+          <app-sentence [word_jp]="pattern.word_jp" [kanji]="pattern.kanji"></app-sentence>
+      </div>
     </li>
-    }
+  }
 </ol>
-
-<!-- <div class="d-flex gap-2 align-items-end">
-    <p class="">サントスさんは</p>
-    <div>
-        <p class="">がくせい</p>
-        <p class="">学生</p>
-    </div>
-    <p class="">じゃ ありません</p>
-</div> -->

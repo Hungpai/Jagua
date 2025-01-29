@@ -1,24 +1,3 @@
-<!-- <ol>
-    @for(gr of grammar; track $index) {
-        <li class="pb-4 outer">
-            <h5><span class="header">{{ gr.header }}</span></h5>
-            @if(gr.description) {
-                <p>{{ gr.description }}</p>
-            }
-
-            @if(gr.grammarItems.length == 1) {
-                <app-grammar-item [grammarItem]="gr.grammarItems[0]"></app-grammar-item>
-            } @else {
-                <ul>
-                    @for (grItems of gr.grammarItems; track $index) {
-                        <li><app-grammar-item [grammarItem]="grItems"></app-grammar-item></li>
-                    }
-                </ul>
-            }
-        </li>
-    }
-</ol> -->
-
 <div class="accordion accordion-flush" id="accordionFlushGrammar">
     @for(gr of grammar; track $index) {
         <div class="accordion-item">

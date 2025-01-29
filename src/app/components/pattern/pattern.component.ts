@@ -1,22 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PatternItemComponent } from '../pattern-item/pattern-item.component';
+import { Component, Input } from '@angular/core';
 import { Vocabulary } from '../../interfaces/vocabulary';
+import { SentenceComponent } from '../sentence/sentence.component';
 
 @Component({
   selector: 'app-pattern',
-  imports: [PatternItemComponent],
+  imports: [SentenceComponent],
   templateUrl: './pattern.component.html',
   styleUrl: './pattern.component.css'
 })
 export class PatternComponent {
   @Input() patterns: Vocabulary[] = [];
-
-  // constructor(private patternService: PatternService) {
-  //   this.patterns = [];
-  // }
-
-  // ngOnInit(): void {
-  //   this.patterns = this.patternService.get();
-  // }
-
 }

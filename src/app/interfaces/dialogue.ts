@@ -4,7 +4,6 @@ export interface DialogueItem {
     id: number;
     content: Vocabulary;
     name: string;
-
 }
 
 export interface Dialogue {
@@ -12,4 +11,5 @@ export interface Dialogue {
     lection: number;
     dialogue: Array<DialogueItem>;
     title: string;
+    type: string;
 }

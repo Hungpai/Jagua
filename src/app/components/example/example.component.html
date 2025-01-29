@@ -1,41 +1,17 @@
 <ol>
-    <!-- <li>
-        <div class="d-flex w-50 justify-content-between">
-            <div>
-                <p>Sind Sie Herr (Mike) Miller?</p>
-                <p>...Ja, ich bin Mike Miller.</p>
+  @for(example of examples; track $index) {
+    <li class="p-1">
+        <div class="examples">
+            <div class="d-flex justify-content-between align-items-end">
+                <p class="m-0">{{ example.question.word_de }}</p>
+                <app-sentence [word_jp]="example.question.word_jp" [kanji]="example.question.kanji"></app-sentence>
             </div>
-            <div>
-                <p>[あなたは] マイク・ミラーさんですか。</p>
-                <p>...はい、[わたしは] マイク・ミラーです。</p>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="d-flex w-50 justify-content-between">
-            <div>
-                <p>Sind Sie Studnet (Herr Miller)?</p>
-                <p>...Nein, ich bin kein Student.</p>
-            </div>
-            <div>
-                <p>ミラーさんは 学生ですか。</p>
-                <p>...いいえ、 [わたしは] 学生じゃ ありません。</p>
+            <div class="d-flex justify-content-between align-items-end">
+                <p class="m-0">{{ example.answer.word_de }}</p>
+                <app-sentence [word_jp]="example.answer.word_jp" [kanji]="example.answer.kanji"></app-sentence>
             </div>
         </div>
-    </li> -->
-    @for(example of examples; track $index) {
-        <li class="p-1">
-            <div class="examples">
-                <div class="d-flex justify-content-between align-items-end">
-                    <p class="m-0">{{ example.question.word_de }}</p>
-                    <app-sentence [word_jp]="example.question.word_jp" [kanji]="example.question.kanji"></app-sentence>
-                </div>
-                <div class="d-flex justify-content-between align-items-end">
-                    <p class="m-0">{{ example.answer.word_de }}</p>
-                    <app-sentence [word_jp]="example.answer.word_jp" [kanji]="example.answer.kanji"></app-sentence>
-                </div>
-            </div>
 
-        </li>
-    }
+    </li>
+  }
 </ol>

@@ -191,4 +191,4 @@ describe('Vocabulary Component', () => {
     const route = TestBed.inject(ActivatedRoute);
     expect(route.snapshot.params['lection']).toBe(1);
   });
-})
+});

@@ -9,8 +9,7 @@ import { KanjiPosition } from '../../interfaces/kanji';
 })
 export class SentenceComponent {
   @Input() word_jp: string = "";
-  @Input() kanji: any = {};
-  @Input() id?: string;
+  @Input() kanji: KanjiPosition[] = [];
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
@@ -28,7 +27,8 @@ export class SentenceComponent {
       let singleKanji = k.kanji;
       let kana = k.kana;
       let kanji_index = word_jp.indexOf(singleKanji, i);
-
+      
+      // text before the kanji
       if (kanji_index > i) {
         let paragraph = this.renderer.createElement('span');
         let subString = word_jp.substring(i,kanji_index);
@@ -38,6 +38,7 @@ export class SentenceComponent {
         this.addPadding(paragraph, subString);
       }
 
+      // kanji
       const kanjiDisplay = this.createKanjiDisplay(singleKanji, kana);
       this.renderer.appendChild(wrapper, kanjiDisplay);
 

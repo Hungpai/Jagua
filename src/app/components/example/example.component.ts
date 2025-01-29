@@ -10,13 +10,4 @@ import { SentenceComponent } from '../sentence/sentence.component';
 })
 export class ExampleComponent {
   @Input() examples: Example[] = [];
-
-  // constructor(private exService: ExampleService) {
-  //   this.examples = []
-  // }
-
-  // ngOnInit() {
-  //   this.examples = this.exService.get();
-  // }
-
 }
