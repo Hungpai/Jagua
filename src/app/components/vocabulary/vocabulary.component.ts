@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Vocabulary } from '../../interfaces/vocabulary';
 import { VocabularyService } from '../../services/vocabulary.service';
 import { SentenceComponent } from '../sentence/sentence.component';
@@ -21,7 +21,7 @@ export class VocabularyComponent implements OnInit {
 
   constructor(
     private vocabService: VocabularyService, 
-    private activatedRoute:ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
   ) {
     this.vocabulary = [];
     this.index = 0;

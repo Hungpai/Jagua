@@ -1,10 +1,10 @@
-import { Kanji } from "./kanji";
+import { Kanji, KanjiPosition } from "./kanji";
 
 export interface Vocabulary {
     id: number;
     lection: number;
     type: string;
-    kanji: Array<Kanji>;
+    kanji: Array<KanjiPosition>;
     word_jp: string;
     word_de: string;
 }
