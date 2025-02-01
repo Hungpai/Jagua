@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy to S3') {
             steps {
-                bat 'aws s3 sync dist\\minna-no-nihongo\\browser s3://jagua --delete'
+                bat 'aws s3 sync dist\\minna-no-nihongo\\browser s3://jagua.hungpy.de --delete'
             }
         }
     }
