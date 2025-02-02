@@ -23,7 +23,10 @@ pipeline {
         }
         stage('Deploy to S3') {
             steps {
-                bat 'aws s3 sync dist\\minna-no-nihongo\\browser s3://jagua.hungpy.de --delete'
+                bat """
+                aws s3 sync dist\\minna-no-nihongo\\browser s3://jagua.hungpy.de --delete
+                aws cloudfront create-invalidation --distribution-id E2ELMYHZOC0J9L --paths /*
+                """
             }
         }
     }
