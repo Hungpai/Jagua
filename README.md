@@ -8,7 +8,7 @@ Backend logic is maintened in the following repository:
 Deployed on AWS via CloudFront and S3:
 - https://jagua.hungpy.de/
   
-![pic](img/jagua-voc.jpg)
+![pic](img/jagua-voc.JPG)
 
 ## Features
 - Responsive: adapts to large, medium and small screens.
@@ -29,8 +29,11 @@ Deployed on AWS via CloudFront and S3:
 
 ## Component Tests
 - Each Component has a <component_name>.spec.ts file containing multiple unit tests to ensure expected functionality.
+  
 ![test](img/test-jasmine.JPG)
+
 - Code coverage
+  
 ![pipeline](img/code-coverage.JPG)
 
 ## CI/CD
@@ -40,11 +43,13 @@ Jenkins Pipeline Stages:
 3. Testing
 4. Build
 5. Deploy
+   
 ![jenkins-pipeline](img/jenkins-pipeline.JPG)
 
 
 ## Cloud
 - Deployed on AWS using RDS, EC2, ALB, S3, Route 53, CloudFront, Certificate Manager
+  
 ![aws](img/aws.jpg)
 
 ## Development server
@@ -56,20 +61,6 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 
