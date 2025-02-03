@@ -1,6 +1,51 @@
-# MinnaNoNihongo
+# 🌸 Jagua
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+Frontend logic for Jagua, a web application to learn japanese vocabulary, sentence pattern, examples, dialogues and grammar. 
+Backend logic is maintened in the following repository: 
+- https://github.com/Hungpai/jagua-backend-public
+
+## Demo
+Deployed on AWS via CloudFront and S3:
+- https://jagua.hungpy.de/
+  
+![pic](img/jagua-voc.jpg)
+
+## Features
+- Responsive: adapts to large, medium and small screens.
+- Flipcard interaction 
+- Structured learning content
+- Future features:
+  - Exercises
+  - Hirana and Katakna practice
+  - Kanji practice
+  - More chapters
+
+## Technologies
+- Angular
+- TypeScript
+- HTML, CSS, Bootstrap
+- Jasmine
+- Jenkins
+
+## Component Tests
+- Each Component has a <component_name>.spec.ts file containing multiple unit tests to ensure expected functionality.
+![test](img/test-jasmine.JPG)
+- Code coverage
+![pipeline](img/code-coverage.JPG)
+
+## CI/CD
+Jenkins Pipeline Stages:
+1. Checkout
+2. Install Dependencies
+3. Testing
+4. Build
+5. Deploy
+![jenkins-pipeline](img/jenkins-pipeline.JPG)
+
+
+## Cloud
+- Deployed on AWS using RDS, EC2, ALB, S3, Route 53, CloudFront, Certificate Manager
+![aws](img/aws.jpg)
 
 ## Development server
 
@@ -43,17 +88,3 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
