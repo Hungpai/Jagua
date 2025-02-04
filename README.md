@@ -16,7 +16,7 @@ Deployed on AWS via CloudFront and S3:
 - Structured learning content
 - Future features:
   - Exercises
-  - Hirana and Katakna practice
+  - Hiragana and Katakana practice
   - Kanji practice
   - More chapters
 
