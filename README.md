@@ -11,12 +11,12 @@ Deployed on AWS via CloudFront and S3:
 ![pic](img/jagua-voc.JPG)
 
 ## Features
-- Responsive: adapts to large, medium and small screens.
+- Responsive: adapts to large, medium and small screens
 - Flipcard interaction 
 - Structured learning content
 - Future features:
   - Exercises
-  - Hirana and Katakna practice
+  - Hiragana and Katakana practice
   - Kanji practice
   - More chapters
 
@@ -48,7 +48,7 @@ Jenkins Pipeline Stages:
 
 
 ## Cloud
-- Deployed on AWS using RDS, EC2, ALB, S3, Route 53, CloudFront, Certificate Manager
+- Deployed on AWS using RDS, EC2, ALB, S3, Route 53, CloudFront and Certificate Manager.
   
 ![aws](img/aws.jpg)
 
