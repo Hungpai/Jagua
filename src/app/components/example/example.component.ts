@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Example } from '../../interfaces/example';
 import { SentenceComponent } from '../sentence/sentence.component';
 
@@ -9,5 +9,5 @@ import { SentenceComponent } from '../sentence/sentence.component';
   styleUrl: './example.component.css'
 })
 export class ExampleComponent {
-  @Input() examples: Example[] = [];
+  readonly examples = input.required<Example[]>();
 }

@@ -1,8 +1,8 @@
-@if(dialogue.title) {
-    <h4 class="d-flex justify-content-center w-50 p-3">{{dialogue.title}}</h4>
+@if(dialogue().title) {
+    <h4 class="d-flex justify-content-center w-50 p-3">{{dialogue().title}}</h4>
 }
 <table>
-    @for(dia of dialogue.dialogue | orderBy: 'id'; track $index) {
+    @for(dia of dialogue().dialogue | orderBy: 'id'; track $index) {
         <tr>
             <td>{{ dia.name }}:</td>
             <td class="newline">{{ dia.content.word_de.replaceAll("\\n", "\n").trim() }}</td>

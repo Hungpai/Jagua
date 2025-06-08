@@ -1,4 +1,4 @@
-import { Component, Renderer2, ElementRef, Input, inject } from '@angular/core';
+import { Component, Renderer2, ElementRef, inject, input } from '@angular/core';
 import { KanjiPosition } from '../../interfaces/kanji';
 
 @Component({
@@ -11,12 +11,12 @@ export class SentenceComponent {
   private renderer = inject(Renderer2);
   private el = inject(ElementRef);
 
-  @Input() word_jp: string = "";
-  @Input() kanji: KanjiPosition[] = [];
+  readonly word_jp = input.required<string>();
+  readonly kanji = input.required<KanjiPosition[]>();
 
   ngOnChanges() {
     this.el.nativeElement.innerHTML = ''
-    this.createWordDisplay(this.word_jp, this.kanji, this.el.nativeElement);
+    this.createWordDisplay(this.word_jp(), this.kanji(), this.el.nativeElement);
   }
 
   createWordDisplay(word_jp:string, kanjiPosition: KanjiPosition[], container: HTMLElement) {

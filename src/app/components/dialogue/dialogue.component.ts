@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Dialogue } from '../../interfaces/dialogue';
 import { SentenceComponent } from '../sentence/sentence.component';
 import { OrderByPipePipe } from '../../order-by-pipe.pipe';
@@ -10,5 +10,5 @@ import { OrderByPipePipe } from '../../order-by-pipe.pipe';
   styleUrl: './dialogue.component.css'
 })
 export class DialogueComponent {
-  @Input() dialogue: Dialogue = {} as Dialogue;
+  readonly dialogue = input.required<Dialogue>();
 }

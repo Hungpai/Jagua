@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { GrammarItem } from '../../interfaces/grammar';
 import { Vocabulary } from '../../interfaces/vocabulary';
 import { Dialogue } from '../../interfaces/dialogue';
@@ -15,7 +15,7 @@ import { exhaustMap } from 'rxjs';
   styleUrl: './grammar-item.component.css'
 })
 export class GrammarItemComponent {
-  @Input() grammarItem: GrammarItem = {} as GrammarItem;
+  readonly grammarItem = input.required<GrammarItem>();
 
   dtype(example:Array<Vocabulary|Example|Dialogue>) {
     if (example.length == 0) return "empty";

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Vocabulary } from '../../interfaces/vocabulary';
 import { SentenceComponent } from '../sentence/sentence.component';
 
@@ -9,5 +9,5 @@ import { SentenceComponent } from '../sentence/sentence.component';
   styleUrl: './pattern.component.css'
 })
 export class PatternComponent {
-  @Input() patterns: Vocabulary[] = [];
+  readonly patterns = input.required<Vocabulary[]>();
 }
