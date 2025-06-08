@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Grammar } from '../interfaces/grammar';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,9 +8,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class GrammarService {
+  private http = inject(HttpClient);
+
   private apiServeUrl = environment.apiBaseUrl;
-    
-  constructor(private http: HttpClient) {}
 
   public getGrammar(lection: number): Observable<Grammar[]> {
     return this.http.get<Grammar[]>(`${this.apiServeUrl}/lection/grammar/${lection}`);

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Example } from '../interfaces/example';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,9 +9,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ExampleService {
+    private http = inject(HttpClient);
+
     private apiServeUrl = environment.apiBaseUrl;
-      
-    constructor(private http: HttpClient) {}
   
     public getExample(lection: number): Observable<Example[]> {
       return this.http.get<Example[]>(`${this.apiServeUrl}/lection/example/${lection}`);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Grammar } from '../../interfaces/grammar';
 import { GrammarService } from '../../services/grammar.service';
 import { GrammarItemComponent } from '../grammar-item/grammar-item.component';
@@ -13,13 +13,13 @@ import { OrderByPipePipe } from '../../order-by-pipe.pipe';
   styleUrl: './grammar.component.css'
 })
 export class GrammarComponent implements OnInit {
+  private gramService = inject(GrammarService);
+  private activatedRoute = inject(ActivatedRoute);
+
   grammar: Grammar[] = [];
   lection: number = 1;
 
-  constructor(
-    private gramService: GrammarService,
-    private activatedRoute: ActivatedRoute
-  ) {
+  constructor() {
     this.lection = this.activatedRoute.snapshot.params['lection']
   }
 

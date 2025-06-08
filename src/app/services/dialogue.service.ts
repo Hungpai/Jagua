@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Dialogue } from '../interfaces/dialogue';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,9 +8,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class DialogueService {
+  private http = inject(HttpClient);
+
   private apiServeUrl = environment.apiBaseUrl;
-      
-  constructor(private http: HttpClient) {}
 
   public getDialogue(lection: number): Observable<Dialogue> {
     return this.http.get<Dialogue>(`${this.apiServeUrl}/lection/dialogue/${lection}`);

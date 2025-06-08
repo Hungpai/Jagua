@@ -1,4 +1,4 @@
-import { Component, Renderer2, ElementRef, Input } from '@angular/core';
+import { Component, Renderer2, ElementRef, Input, inject } from '@angular/core';
 import { KanjiPosition } from '../../interfaces/kanji';
 
 @Component({
@@ -8,10 +8,11 @@ import { KanjiPosition } from '../../interfaces/kanji';
   styleUrl: './sentence.component.css'
 })
 export class SentenceComponent {
+  private renderer = inject(Renderer2);
+  private el = inject(ElementRef);
+
   @Input() word_jp: string = "";
   @Input() kanji: KanjiPosition[] = [];
-
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnChanges() {
     this.el.nativeElement.innerHTML = ''

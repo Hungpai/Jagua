@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { VocabularyComponent } from '../vocabulary/vocabulary.component';
 import { PatternComponent } from '../pattern/pattern.component';
 import { ExampleComponent } from "../example/example.component";
@@ -21,17 +21,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './lection.component.css'
 })
 export class LectionComponent implements OnInit {
+  private vocabService = inject(VocabularyService);
+  private exService = inject(ExampleService);
+  private diaService = inject(DialogueService);
+  private activatedRoute = inject(ActivatedRoute);
+
   pattern: Vocabulary[] = [];
   examples: Example[] = [];
   dialogue: Dialogue = {} as Dialogue;
   lection: number = 1;
 
-  constructor(
-    private vocabService: VocabularyService,
-    private exService: ExampleService,
-    private diaService: DialogueService,
-    private activatedRoute:ActivatedRoute
-  ) {
+  constructor() {
     this.lection = this.activatedRoute.snapshot.params['lection']
   }
 

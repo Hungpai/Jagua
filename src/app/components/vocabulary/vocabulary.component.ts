@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Vocabulary } from '../../interfaces/vocabulary';
 import { VocabularyService } from '../../services/vocabulary.service';
 import { SentenceComponent } from '../sentence/sentence.component';
@@ -11,6 +11,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './vocabulary.component.css'
 })
 export class VocabularyComponent implements OnInit {
+  private vocabService = inject(VocabularyService);
+  private activatedRoute = inject(ActivatedRoute);
+
   vocabulary: Vocabulary[];
   index: number;
   curr_vocab: Vocabulary;
@@ -19,10 +22,7 @@ export class VocabularyComponent implements OnInit {
   progress: string;
   lection: number = 1;
 
-  constructor(
-    private vocabService: VocabularyService, 
-    private activatedRoute: ActivatedRoute,
-  ) {
+  constructor() {
     this.vocabulary = [];
     this.index = 0;
     this.curr_vocab = {} as Vocabulary;

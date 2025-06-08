@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Vocabulary } from '../interfaces/vocabulary';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,9 +8,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class VocabularyService {
-  private apiServeUrl = environment.apiBaseUrl;
+  private http = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
+  private apiServeUrl = environment.apiBaseUrl;
 
   public getVocabulary(lection:number): Observable<Vocabulary[]> {
     return this.http.get<Vocabulary[]>(`${this.apiServeUrl}/lection/voc/${lection}`);
